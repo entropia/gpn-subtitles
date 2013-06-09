@@ -23,7 +23,7 @@ my @commands = gather for @talks {
 
     my $title = .<title>.subst(q{'}, q{\'}, :g).subst("\c[SOFT HYPHEN]", "", :g);
 
-    take "ghi --no-assign -L subtitle --message '$title - subtitles'"
+    take "ghi open --no-assign -L subtitle --message '$title - subtitles'"
 }
 
 .say for @commands;
