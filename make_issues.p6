@@ -21,7 +21,7 @@ my @commands = gather for @talks {
     next if .<place> eq "Workshopraum" | "Hackcenter";
     next if .<type> eq "W";
 
-    my $title = .<title>.subst(q{'}, q{\'}, :g).subst("\c[SOFT HYPHEN]", "");
+    my $title = .<title>.subst(q{'}, q{\'}, :g).subst("\c[SOFT HYPHEN]", "", :g);
 
     take "ghi --no-assign -L subtitle --message '$title - subtitles'"
 }
